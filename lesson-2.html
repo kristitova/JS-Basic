@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        alert("Задание 1");
+        // пример 1
+        let a = 1;
+        let b = 1;
+        let c = null;
+        let d = null;
+
+        c = ++a;
+        alert("Пример 1: Переменная c равна " + c);
+
+        /*
+        Префиксный инкремент 
+        Увеличиваем переменную a на 1, получаем 2.
+        Присваиваем переменной  c полученный результат.
+        Результат: 2
+        */
+
+        // пример 2
+
+        d = b++;
+        alert("Пример 2: Переменная d равна " + d);
+
+        /*
+        Постфиксный инкремент 
+        Присваиваем переменный d значение переменной b=1, увеличиваем значение b на 1.
+        Результат: 1
+        */
+
+        // пример 3
+
+        c = 2 + ++a;
+        alert("Пример 3: Переменная c равна  " + c);
+
+        /*
+        Префиксный инкремент
+        Увеличиваем значение переменной a на 1, получаем 3.
+        Складываем полученный результат со значением 2.
+        Результат: 5
+        */
+
+        // пример 4
+
+        d = 2 + b++;
+        alert("Пример 4: Переменная d равна " + d);
+
+        /*
+        Постфиксный инкремент
+        Переменную b со значением 2 складываем со значением 2, увеличиваем значение b на 1.
+        Результат: 4
+        */
+
+        alert("В результате вычислений переменная a равна: " + a);
+        alert("В результате вычислений переменная b равна: " + b);
+
+        /*
+        По итогу получаем a=3,  b=3
+        */
+
+        alert("Задание 2");
+
+        let a_2 = 2;
+        let x = 1 + (a_2 *= 2);
+        alert("Переменная a равна " + a_2);
+        alert("Переменная x равна " + x);
+
+        /*
+        1. оператор группировки(по приоритету)
+        2. умножение с присваиванием a_2=a_2*2, получаем 4, переменная a_1 будет равна 4
+        3. сложение 1 с переменной a_2=4, получаем 5
+        Результат a_2=4, x=5
+
+        */
+
+        alert("Задание 3");
+
+        let a_3 = parseInt(prompt("Задайте значение a: "));
+        let b_3 = parseInt(prompt("Задайте значение b: "));
+
+
+        if (a_3 >= 0 && b_3 >= 0) {
+            alert("Разность двух заданных чисел: " + (a_3 - b_3));
+        } else if (a_3 < 0 && b_3 < 0) {
+            alert("Произведение двух заданных чисел: " + (a_3 * b_3));
+        } else if ((a_3 < 0 && b_3 >= 0) || (a_3 >= 0 && b_3 < 0)) {
+            alert("Сумма двух заданных чисел: " + (a_3 + b_3));
+        }
+
+        alert("Задание 4");
+
+
+        function sum_(num1, num2) {
+            return alert("Сумма двух чисел равна: " + (num1 + num2));
+        }
+
+        let substraction_ = function (num1, num2) {
+            return alert("Вычитание двух чисел равно: " + (num1 - num2));
+        }
+
+        let multiply_ = (num1, num2) => alert("Произведение двух чисел равно: " + (num1 * num2))
+
+        function division_(num1, num2) {
+
+            return alert("Деление двух чисел равно: " + (num1 / num2));
+
+        }
+
+        num_1 = parseInt(prompt("Введите первое число: "));
+        num_2 = parseInt(prompt("Введите второе число: "));
+
+        sum_(num_1, num_2);
+        substraction_(num_1, num_2);
+        multiply_(num_1, num_2);
+        division_(num_1, num_2);
+
+
+        alert("Задание 5");
+
+
+        function mathOperation(num1, num2, operation) {
+            switch (operation) {
+                case 'Сумма':
+                    return sum_(num1, num2);
+
+                case 'Разность':
+                    return substraction_(num1, num2);
+
+                case 'Произведение':
+                    return multiply_(num1, num2);
+
+                case 'Деление':
+                    return division_(num1, num2);
+            }
+        }
+
+        mathOperation(num_1, num_2, 'Произведение');
+        mathOperation(num_1, num_2, 'Разность');
+        mathOperation(num_1, num_2, 'Сумма');
+        mathOperation(num_1, num_2, 'Деление');
+
+    </script>
+</body>
+
+</html>
